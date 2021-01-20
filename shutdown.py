@@ -15,7 +15,7 @@ async def shutdownSys():
 
 async def closeProgram():
     print('Program is closing..')
-    await asyncio.sleep(3)
+    await asyncio.sleep(1.5)
     print('Program closed.')
     exit()
 
@@ -27,10 +27,10 @@ def leaveProgram():
     asyncio.run(closeProgram())
 
 while True:
-    sysOption = input("1. Shutdown system.\n2. Exit program\n")
+    sysOption = input("\nDo you want to shutdown this computer?\n\n1. Shutdown system.\n2. Exit program\n")
     if int(sysOption) == 1:
         shutdown()
     elif int(sysOption) == 2:
         leaveProgram()
     else:
-        print(f'{sysOption} is not a valid option, please choose from the available options.')
+        print(f'\"{sysOption}\" is not a valid option, please choose from the available options.')
