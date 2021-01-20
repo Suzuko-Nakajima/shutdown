@@ -11,6 +11,7 @@ import datetime
 async def shutdownSys():
     print('To be advised: Your OS is shutting down! [10 Seconds...]\nTo cancel this, you can force shutdown the program using \'CTRL\' + \'Z\' in the terminal.')
     await asyncio.sleep(10)
+    print('Operating system is shutting down...')
     os.system("shutdown /s /t 1")
 
 async def closeProgram():
