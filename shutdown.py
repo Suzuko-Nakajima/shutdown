@@ -8,13 +8,23 @@ import random
 import time
 import datetime
 
-def shutdown():
-    print('To be advised: Your OS is shutting down!\n')
+async def shutdownSys():
+    print('To be advised: Your OS is shutting down! [10 Seconds...]\nTo cancel this, you can force shutdown the program using \'CTRL\' + \'Z\' in the terminal.')
+    await asyncio.sleep(10)
     os.system("shutdown /s /t 1")
 
-def leaveProgram():
-    print('Program exit.')
+async def closeProgram():
+    print('Program is closing..')
+    await asyncio.sleep(3)
+    print('Program closed.')
     exit()
+
+
+def shutdown():
+    asyncio.run(shutdownSys())
+
+def leaveProgram():
+    asyncio.run(closeProgram())
 
 while True:
     sysOption = input("1. Shutdown system.\n2. Exit program\n")
